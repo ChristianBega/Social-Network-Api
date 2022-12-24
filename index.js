@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express");
 const db = require("./config/connection");
 const routes = require("./routes");
@@ -20,13 +19,3 @@ db.once("open", () => {
     console.log(`API server for ${activity} running on port ${PORT}!`);
   });
 });
-=======
-// Require in express
-// Require in config/connection
-// Require in routes
-
-// cwd - process.cwd???
-
-//PORT
-//app = express ()
->>>>>>> 23fcc3453a13ffedd63324ba9d9b5f80e267692c
