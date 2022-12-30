@@ -33,3 +33,8 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 
 
+Questions for tutor :: 
+1. What's the best way to go about creating a API. 
+  b. Where should I start??? config? index.js? routes? models? 
+
+
