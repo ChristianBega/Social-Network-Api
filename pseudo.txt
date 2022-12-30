@@ -37,4 +37,9 @@ Questions for tutor ::
 1. What's the best way to go about creating a API. 
   b. Where should I start??? config? index.js? routes? models? 
 
+2. How should I go about building an API? 
+  a. Where should I start? config & index? 
+  b. Should I do routes, models, or controllers first? 
+  
+
 
