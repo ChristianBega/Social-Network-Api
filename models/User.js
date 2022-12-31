@@ -14,8 +14,8 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       require: true,
-      // validate :
-      // match :
+      // validate : ?
+      // match : ?
     },
     thoughts: [
       {
