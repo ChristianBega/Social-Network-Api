@@ -1,8 +1,34 @@
 //require in mongoose
 const { Schema, model } = require("mongoose");
-const reaction = require("./Reaction");
 
-// create new thoughtSchema with the values :
+const reactionSchema = new schema(
+  {
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
+    reactionBody: {
+      type: String,
+      required: true,
+      maxlength: 280,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+    id: false,
+  }
+);
+
 const thoughtSchema = new schema(
   {
     thoughtText: {
@@ -14,8 +40,7 @@ const thoughtSchema = new schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //getter method ??
-      get: (time) => formatDate(time),
+      //getter method ?? Ex. get: (time) => formatDate(time),
     },
     userName: {
       type: String,
