@@ -3,7 +3,7 @@
 // export connection
 const { connect, connection } = require("mongoose");
 
-connect("mongodb://localhost/developersApplications", {
+connect("mongodb://localhost/socialNetworkDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -33,3 +33,15 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 
 
+Questions for tutor :: 
+1. What's the best way to go about creating a API. 
+  b. Where should I start??? config? index.js? routes? models? 
+
+2. How should I go about building an API? 
+  a. Where should I start? config & index? 
+  b. Should I do routes, models, or controllers first? 
+  
+3. How do I create seed data? 
+
+4. How to use virtual?
+  a. what is the purpose of a virtual

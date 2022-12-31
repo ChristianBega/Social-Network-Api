@@ -1,7 +1,16 @@
 // require in router
+const router = require("express").Router();
 
-// destructure controllers and use the ones needed
+// destructuring userConnection controllers
+const { getUsers, getSingleUser, createUser, updateUser, deleteUser } = require("../../controllers/userConnection");
 
-// Create routes needed using controllers
+// Creating routes using controllers
+
+// http://localhost:3001/api/users - GET or POST 
+router.route("/").get(getUsers).post(createUser);
+
+// http://localhost:3001/api/users/:_id - GET or PUT or DELETE by _id 
+router.route("/:_id").get(getSingleUser).put(updateUser).delete(deleteUser);
 
 // Export router
+module.exports = router;
