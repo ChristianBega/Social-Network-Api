@@ -1,5 +1,6 @@
 // Require in connection
-// require in models
+// require in models and destructure models
+
 // require in data
 
 // connection.on ?????
@@ -8,13 +9,12 @@
 //Drop existing users
 //Drop existing thoughts
 
-//Create empty array to store USERS && THOUGHTS
+//Create empty array to store USERS 
 
 //Add USERS to collection - insertMany
 //ADD THOUGHTS to collection - insertMany
 
 //}
-
 
 //connection.on - https://mongoosejs.com/docs/connections.html
 //connection.once -
