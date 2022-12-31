@@ -41,5 +41,5 @@ Questions for tutor ::
   a. Where should I start? config & index? 
   b. Should I do routes, models, or controllers first? 
   
-
+3. How do I create seed data? 
 

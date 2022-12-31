@@ -1,20 +1,32 @@
 // Require in connection
+const connection = require("../config/connection");
 // require in models and destructure models
-
+const { User } = require("../models/User");
 // require in data
+//, thoughtData, ReactionData
+const { userData } = require("./data");
 
-// connection.on ?????
-// connection.once ?????{
+// Start the seeding runtime  timer
+console.time("seeding");
+// connection.on - will check for error each time a connection is attempted?
+connection.on("error", (err) => err);
+connection.once("open", async () => {
+  console.log("connected");
+  // Drop any users
+  await User.deleteMany({});
+  const users = users.push(userData);
+  // await Thought.deleteMany();
+  // await Reaction.deleteMany();
+  await User.collection.insertMany(users);
+});
 
-//Drop existing users
-//Drop existing thoughts
+// Drop existing users
+// Drop existing thoughts
 
-//Create empty array to store USERS 
+// Create empty array to store USERS
 
-//Add USERS to collection - insertMany
-//ADD THOUGHTS to collection - insertMany
-
-//}
+// Add USERS to collection - insertMany
+// ADD THOUGHTS to collection - insertMany
 
 //connection.on - https://mongoosejs.com/docs/connections.html
 //connection.once -
