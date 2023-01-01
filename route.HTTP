@@ -1,0 +1,24 @@
+# getUsers
+GET http://localhost:3001/api/users
+
+###
+
+# getSingleUser
+GET http://localhost:3001/api/users/
+
+### 
+
+# createUser
+POST http://localhost:3001/api/users
+Content-Type:  application/json
+
+# {
+#   "name" : "Amazing Test",
+#   "subscribedToChannel" : "Amazing Testing"
+# }
+
+###
+
+# deleteUsers
+DELETE http://localhost:3001/api/users/
+

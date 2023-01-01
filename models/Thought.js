@@ -1,7 +1,7 @@
 //require in mongoose
 const { Schema, model } = require("mongoose");
 
-const reactionSchema = new schema(
+const reactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
@@ -10,7 +10,7 @@ const reactionSchema = new schema(
     reactionBody: {
       type: String,
       required: true,
-      maxlength: 280,
+      maxLength: 280,
     },
     userName: {
       type: String,
@@ -29,7 +29,7 @@ const reactionSchema = new schema(
   }
 );
 
-const thoughtSchema = new schema(
+const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
@@ -56,7 +56,6 @@ const thoughtSchema = new schema(
     id: false,
   }
 );
-
 
 // Schema settings -
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
