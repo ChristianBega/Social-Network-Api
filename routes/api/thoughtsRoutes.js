@@ -2,7 +2,7 @@
 const router = require("express").Router();
 
 // destructure controllers and use the ones needed
-const { getThought, getSingleThought, createThought, updateThought, deleteThought } = require("../../controllers/userConnection");
+const { getThought, getSingleThought, createThought, updateThought, deleteThought } = require("../../controllers/userController");
 
 // Create routes needed using controllers
 
