@@ -1,12 +1,3 @@
-// Require in thoughts model
-
-// module export out route controllers
-// 1. GET all thoughts from db
-// 2. GET a single thought from db by ID
-// 2. POST (create) thoughts to db
-// 3. PUT (update) thoughts from db by ID
-// 4. DELETE (remove) thoughts from db by ID
-
 const Thought = require("../models/thought");
 
 module.exports = {
@@ -16,19 +7,26 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   getSingleThought(req, res) {
-    Thought.findOne({ _id: req.params.ID }); //pass in {id : req.params.thoughtId}, {}}
-    //.then
-    //.catch
+    Thought.findOne({ _id: req.params.ID })
+      .then((thought) => (!thought ? res.status(404).json({ message: "No thought with that ID" }) : res.json(thought)))
+      .catch((err) => res.status(500).json({ message: err.message }));
   },
   createThought(req, res) {
-    Thought.create(req.body);
-    //.then
-    //.catch
+    Thought.create(req.body)
+      .then((thought) => res.status(201).json(thought))
+      .catch((err) => {
+        res.status(400).json({ message: err.message });
+      });
   },
-  updateThought(req, res) {
-    Thought.findOneAndUpdate({}); // pass in
-  },
+  // updateThought(req, res) {
+  //   Thought.findOneAndUpdate({}); // pass in
+  // },
   deleteThought(req, res) {
-    Thought.findOneAndRemove({}); //pass in id req.params.userId
+    Thought.findOneAndRemove({ _id: req.params.thoughtId })
+      .then((thought) =>
+        !thought ? res.status(404).json({ message: "No Thought found with that ID" }) : Thought.deleteMany({ _id: { $in: thought.thoughts } })
+      )
+      .then(() => res.json({ message: "Thought deleted" }))
+      .catch((err) => res.status(500).json({ message: err.message }));
   },
 };
