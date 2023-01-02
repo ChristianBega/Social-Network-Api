@@ -42,9 +42,10 @@ Questions for tutor ::
 3. How do I create seed data? 
 4. How to use virtual?
   a. what is the purpose of a virtual
-5. validate & match User.js
 
 
+
+Project TODO :: 
 
 1. I need to fix CREATE, and need help setting up UPDATE controllers
   a. user - create and update
@@ -53,17 +54,29 @@ Questions for tutor ::
 2. I need help with setting up the virtual for my userSchema
   a. virtual was built but was "unable to read .length of undefined"
 
-3.I need to create routes for this path - /api/thoughts/:thoughtId/reactions 
+3. validate & match userSchema for email
+
+4.I need to create routes for this path - /api/thoughts/:thoughtId/reactions 
   a. reactions - post and delete 
+  b. change controllers to???
 
-4. BONUS: Remove a user's associated thoughts when deleted - /api/users/:userId/friends/:friendId
-
-5. Create seed data for thoughts
-
-6. How could I add response to response 
+5. How could I add response to response 
   a. ex. Responding to a comment on your own post. 
     User A created a post > 
     User B commented on that post > 
     User A responds backs on User B comment. 
   b. ex. Adding reactions 
   c. Could I build another sub document??? And use virtual or 
+
+6. How could I tie a front end to this? 
+  a. I need to create eventListeners to run a fetch to api
+  b. 
+
+7. When creating a user I get a value of :  "__v" : 0
+
+8. BONUS: Remove a user's associated thoughts when deleted - /api/users/:userId/friends/:friendId
+  a. POST to add a new friend to a user's friend list
+  b. DELETE to remove a friend from a user's friend list
+
+9. Create seed data for thoughts
+  a. What is this???? Where does it come from??? 

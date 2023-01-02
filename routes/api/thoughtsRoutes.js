@@ -14,5 +14,6 @@ router.route("/").get(getThought).post(createThought);
 // .put(updateThought)
 router.route("/:_id").get(getSingleThought).delete(deleteThought);
 
+// http://localhost:3001/api/thoughts/:thoughtId/reactions
 // Export router
 module.exports = router;
