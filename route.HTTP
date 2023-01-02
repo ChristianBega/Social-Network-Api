@@ -1,0 +1,23 @@
+# getUsers
+GET http://localhost:3001/api/users
+
+###
+
+# getSingleUser
+GET http://localhost:3001/api/users/63b24bc9094fbfa2e15b356e
+
+### 
+
+# createUser
+POST http://localhost:3001/api/users
+
+
+{
+    "userName": "Joey",
+    "email": "Joey@gmail.com",
+}
+###
+
+# deleteUsers
+DELETE http://localhost:3001/api/users/63b24e59cd287d627e544c95
+

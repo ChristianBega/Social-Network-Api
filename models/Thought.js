@@ -1,9 +1,35 @@
 //require in mongoose
 const { Schema, model } = require("mongoose");
-const reaction = require("./Reaction");
 
-// create new thoughtSchema with the values :
-const thoughtSchema = new schema(
+const reactionSchema = new Schema(
+  {
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
+    reactionBody: {
+      type: String,
+      required: true,
+      maxLength: 280,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+    id: false,
+  }
+);
+
+const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
@@ -14,8 +40,7 @@ const thoughtSchema = new schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //getter method ??
-      get: (time) => formatDate(time),
+      //getter method ?? Ex. get: (time) => formatDate(time),
     },
     userName: {
       type: String,
@@ -31,9 +56,6 @@ const thoughtSchema = new schema(
     id: false,
   }
 );
-// 1. thoughtText - string, required, must be between 1-280 chars
-// 2. createdAt - date, set default value to current timestamp, getter method to format timestamp on query
-// 3. username (user that created the thought) - string, required
 
 // Schema settings -
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
