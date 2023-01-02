@@ -15,13 +15,13 @@ module.exports = {
   // Post route notes ::
   //To create a new thought (don't forget to push the created thought's _id to the associated user's thoughts array field)
 
-  // createThought(req, res) {
-  //   Thought.create(req.body)
-  //     .then((thought) => res.status(201).json(thought))
-  //     .catch((err) => {
-  //       res.status(400).json({ message: err.message });
-  //     });
-  // },
+  createThought(req, res) {
+    Thought.create(req.body)
+      .then((thought) => res.status(201).json(thought))
+      .catch((err) => {
+        res.status(400).json({ message: err.message });
+      });
+  },
 
   // updateThought(req, res) {
   //   Thought.findOneAndUpdate({}); // pass in

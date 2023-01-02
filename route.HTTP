@@ -12,10 +12,8 @@ GET http://localhost:3001/api/users/
 
 # createUser
 POST http://localhost:3001/api/users
-
-
 {
-  "username": "lernantino",
+  "userName": "lernantino",
   "email": "lernantino@gmail.com"
 }
 ###
@@ -37,13 +35,12 @@ GET http://localhost:3001/api/thoughts
 ###
 
 # getSingleThought by Id
-GET http://localhost:3001/api/thoughts/
+GET http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
 
 ### 
 
 # createThought
 POST http://localhost:3001/api/thoughts
-
 
 {
   "thoughtText": "Here's a cool thought...",
@@ -52,9 +49,9 @@ POST http://localhost:3001/api/thoughts
 }
 ###
 # updateThought by Id
-PUT http://localhost:3001/api/thoughts
+PUT http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
 
 ###
 
 # deleteThoughts by Id
-DELETE http://localhost:3001/api/thoughts/
+DELETE http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c

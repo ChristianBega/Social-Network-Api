@@ -11,12 +11,10 @@ const { getUsers, getSingleUser, createUser, deleteUser, updateUser } = require(
 router.route("/").get(getUsers).post(createUser);
 
 // http://localhost:3001/api/users/:_id - GET or PUT or DELETE by _id
-router.route("/:_id").get(getSingleUser).delete(deleteUser).put(updateUser);
+// .put(updateUser)
+router.route("/:_id").get(getSingleUser).delete(deleteUser);
 
 // http://localhost:3001/api/users/:userId/friends/:friendId
-
-
-
 
 // Export router
 module.exports = router;
