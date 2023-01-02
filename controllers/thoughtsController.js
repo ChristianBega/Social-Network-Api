@@ -11,13 +11,13 @@ module.exports = {
       .then((thought) => (!thought ? res.status(404).json({ message: "No thought with that ID" }) : res.json(thought)))
       .catch((err) => res.status(500).json({ message: err.message }));
   },
-  createThought(req, res) {
-    Thought.create(req.body)
-      .then((thought) => res.status(201).json(thought))
-      .catch((err) => {
-        res.status(400).json({ message: err.message });
-      });
-  },
+  // createThought(req, res) {
+  //   Thought.create(req.body)
+  //     .then((thought) => res.status(201).json(thought))
+  //     .catch((err) => {
+  //       res.status(400).json({ message: err.message });
+  //     });
+  // },
   // updateThought(req, res) {
   //   Thought.findOneAndUpdate({}); // pass in
   // },
