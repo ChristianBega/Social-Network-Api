@@ -1,10 +1,10 @@
 // Require in connection
 const connection = require("../config/connection");
 // require in models and destructure models
-const { User } = require("../models");
+const { User, Thought } = require("../models");
 // require in data
 //, thoughtData, ReactionData
-const { userData } = require("./data");
+const { userData, thoughtData } = require("./data");
 
 // Start the seeding runtime  timer
 console.time("seeding");
@@ -14,9 +14,11 @@ connection.once("open", async () => {
   console.log("connected");
   // Drop any users
   await User.deleteMany({});
-  // await Thought.deleteMany();
+  await Thought.deleteMany();
   // await Reaction.deleteMany();
   await User.collection.insertMany(userData);
+  await Thought.collection.insertMany(thoughtData);
+  process.exit(0);
 });
 
 // Drop existing users

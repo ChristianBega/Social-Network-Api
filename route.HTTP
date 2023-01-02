@@ -1,23 +1,57 @@
+### USERS ###
+
 # getUsers
 GET http://localhost:3001/api/users
 
 ###
 
-# getSingleUser
-GET http://localhost:3001/api/users/63b24bc9094fbfa2e15b356e
+# getSingleUser by Id
+GET http://localhost:3001/api/users/
 
 ### 
 
 # createUser
 POST http://localhost:3001/api/users
-
-
 {
-    "userName": "Joey",
-    "email": "Joey@gmail.com",
+  "userName": "lernantino",
+  "email": "lernantino@gmail.com"
 }
 ###
+# updateUser by Id
+PUT http://localhost:3001/api/users
 
-# deleteUsers
-DELETE http://localhost:3001/api/users/63b24e59cd287d627e544c95
+###
 
+# deleteUsers by Id
+DELETE http://localhost:3001/api/users/
+
+###
+
+### THOUGHTS ###
+
+# getThought
+GET http://localhost:3001/api/thoughts
+
+###
+
+# getSingleThought by Id
+GET http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+
+### 
+
+# createThought
+POST http://localhost:3001/api/thoughts
+
+{
+  "thoughtText": "Here's a cool thought...",
+  "username": "lernantino",
+  "userId": "5edff358a0fcb779aa7b118b"
+}
+###
+# updateThought by Id
+PUT http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+
+###
+
+# deleteThoughts by Id
+DELETE http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c

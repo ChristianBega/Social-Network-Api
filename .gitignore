@@ -2,6 +2,8 @@ node_modules
 .env
 .DS_Store
 package-lock.json
+pseudo.txt
+route.HTTP
 # Logs
 logs
 *.log

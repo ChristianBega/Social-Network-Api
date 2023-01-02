@@ -2,8 +2,8 @@
 const router = require("express").Router();
 
 // destructuring userConnection controllers
-//  updateUser
-const { getUsers, getSingleUser, createUser, deleteUser } = require("../../controllers/userController");
+//
+const { getUsers, getSingleUser, createUser, deleteUser, updateUser } = require("../../controllers/userController");
 
 // Creating routes using controllers
 
@@ -11,10 +11,10 @@ const { getUsers, getSingleUser, createUser, deleteUser } = require("../../contr
 router.route("/").get(getUsers).post(createUser);
 
 // http://localhost:3001/api/users/:_id - GET or PUT or DELETE by _id
-// .put(updateUser);
+// .put(updateUser)
 router.route("/:_id").get(getSingleUser).delete(deleteUser);
 
-// http://localhost:3001/api/users/:_id/thoughts/:_id
+// http://localhost:3001/api/users/:userId/friends/:friendId
 
 // Export router
 module.exports = router;
