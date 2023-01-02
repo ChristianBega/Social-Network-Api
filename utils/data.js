@@ -5,13 +5,13 @@ const userData = [
     userName: "Chris",
     email: "Chris@gmail.com",
     thoughts: ["string of text 1", "string of text 2"],
-    friends: ["Friend 1", "Friend 2", "Friend 3"],
+    friends: ["John", "Friend 2", "Friend 3"],
   },
   {
     userName: "John",
     email: "John@gmail.com",
     thoughts: ["string of text 1", "string of text 2"],
-    friends: ["Friend 1", "Friend 2", "Friend 3"],
+    friends: ["Chris", "Friend 2", "Friend 3"],
   },
 ];
 // thought {} - thoughtText, createdAt, userName (creator of thought)

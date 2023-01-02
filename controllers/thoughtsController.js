@@ -7,7 +7,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   getSingleThought(req, res) {
-    Thought.findOne({ _id: req.params.ID })
+    Thought.findOne({ _id: req.params._id })
       .then((thought) => (!thought ? res.status(404).json({ message: "No thought with that ID" }) : res.json(thought)))
       .catch((err) => res.status(500).json({ message: err.message }));
   },
@@ -22,7 +22,7 @@ module.exports = {
   //   Thought.findOneAndUpdate({}); // pass in
   // },
   deleteThought(req, res) {
-    Thought.findOneAndRemove({ _id: req.params.thoughtId })
+    Thought.findOneAndRemove({ _id: req.params._id })
       .then((thought) =>
         !thought ? res.status(404).json({ message: "No Thought found with that ID" }) : Thought.deleteMany({ _id: { $in: thought.thoughts } })
       )

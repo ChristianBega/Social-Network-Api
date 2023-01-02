@@ -8,13 +8,20 @@ module.exports = {
       .catch((err) => res.status(500).json({ message: err.message }));
   },
   getSingleUser(req, res) {
-    User.findOne({ _id: req.params.userId })
+    User.findOne({ _id: req.params._id })
       .then((user) => (!user ? res.status(404).json({ message: "No user with that ID" }) : res.json(user)))
       .catch((err) => res.status(500).json({ message: err.message }));
   },
   createUser(req, res) {
+    // , {
+    //   userName: req.body.userName,
+    //   email: req.body.email,
+    //   thoughts: req.body.thoughts,
+    //   friends: req.body.friends,
+    // }
     User.create(req.body)
-      .then((user) => res.status(201).json(user))
+      .then((user) => res.json(user))
+      //return User.findOneAndUpdate ?? lesson 23
       .catch((err) => {
         res.status(400).json({ message: err.message });
       });
@@ -23,7 +30,7 @@ module.exports = {
   //   User.findOneAndUpdate({}); // pass in
   // },
   deleteUser(req, res) {
-    User.findOneAndDelete({ _id: req.params.userId })
+    User.findOneAndDelete({ _id: req.params._id })
       .then((user) => (!user ? res.status(404).json({ message: "No User found with that ID" }) : Thought.deleteMany({ _id: { $in: user.thoughts } })))
       .then(() => res.json({ message: "User and Thoughts deleted" }))
       .catch((err) => res.status(500).json({ message: err.message }));
