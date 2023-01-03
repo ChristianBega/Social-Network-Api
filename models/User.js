@@ -48,6 +48,6 @@ userSchema.virtual("friendCount").get(function () {
 //   this.set(count);
 // });
 
-const User = model("user", userSchema);
+const User = model("User", userSchema);
 module.exports = User;
 // Matching validation - https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax

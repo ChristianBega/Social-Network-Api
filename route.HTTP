@@ -6,7 +6,7 @@ GET http://localhost:3001/api/users
 ###
 
 # getSingleUser by Id
-GET http://localhost:3001/api/users/63b3ab31f6286b2be3851c52
+GET http://localhost:3001/api/users/63b3c9331f40d2bea85ecd00
 
 ### 
 
@@ -16,7 +16,7 @@ Content-Type:  application/json
 
 {
   "userName": "testing123123",
-  "email": "test123123@gmail.com",
+  "email": "test123123@gmail.com"
 }
 
 ###
@@ -29,8 +29,24 @@ PUT http://localhost:3001/api/users
 DELETE http://localhost:3001/api/users/63b3ab461c613f6b236a9979
 
 ###
+
 # addFriend 
-PUT http://localhost:3001/api/users/63b3c9331f40d2bea85eccfd/friends/63b3c9331f40d2bea85ecd00
+PUT http://localhost:3001/api/users/63b46260c82293ec7356dc8f/friends/63b3c9331f40d2bea85eccfc
+
+{
+  "userName": "Chris",
+  "email": "Chris@gmail.com"
+}
+###
+
+# removeFriend
+DELETE http://localhost:3001/api/users/63b46260c82293ec7356dc8f/friends/63b3c9331f40d2bea85eccfc
+
+{
+  "userName": "Chris",
+  "email": "Chris@gmail.com"
+}
+
 ###
 
 ### THOUGHTS ###
