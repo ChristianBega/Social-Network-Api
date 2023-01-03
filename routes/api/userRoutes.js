@@ -2,8 +2,8 @@
 const router = require("express").Router();
 
 // destructuring userConnection controllers
-//
-const { getUsers, getSingleUser, createUser, deleteUser, updateUser } = require("../../controllers/userController");
+//, updateUser
+const { getUsers, getSingleUser, createUser, deleteUser } = require("../../controllers/userController");
 
 // Creating routes using controllers
 

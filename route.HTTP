@@ -6,16 +6,19 @@ GET http://localhost:3001/api/users
 ###
 
 # getSingleUser by Id
-GET http://localhost:3001/api/users/
+GET http://localhost:3001/api/users/63b3ab31f6286b2be3851c52
 
 ### 
 
 # createUser
 POST http://localhost:3001/api/users
+Content-Type:  application/json
+
 {
-  "userName": "lernantino",
-  "email": "lernantino@gmail.com"
+  "userName": "asdfasdfasdfasdfad",
+  "email": "asdfasdfasdfsdf@gmail.com"
 }
+
 ###
 # updateUser by Id
 PUT http://localhost:3001/api/users
@@ -41,7 +44,6 @@ GET http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
 
 # createThought
 POST http://localhost:3001/api/thoughts
-
 {
   "thoughtText": "Here's a cool thought...",
   "username": "lernantino",

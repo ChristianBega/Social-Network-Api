@@ -13,18 +13,11 @@ module.exports = {
       .catch((err) => res.status(500).json({ message: err.message }));
   },
   createUser(req, res) {
-    // , {
-    //   userName: req.body.userName,
-    //   email: req.body.email,
-    //   thoughts: req.body.thoughts,
-    //   friends: req.body.friends,
-    // }
     User.create(req.body)
-      .then((user) => res.json(user))
-      //return User.findOneAndUpdate ?? lesson 23
-      .catch((err) => {
-        res.status(400).json({ message: err.message });
-      });
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((err) => res.status(400).json({ message: err.message }));
   },
   // updateUser(req, res) {
   //   User.findOneAndUpdate({}); // pass in
