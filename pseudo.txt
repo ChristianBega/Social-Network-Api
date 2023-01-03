@@ -47,6 +47,8 @@ Questions for tutor ::
 
 Project TODO :: 
 
+1. Thoughts and friends only showing as an empty array 
+
 1. need help setting up UPDATE controllers
   a. user -  update
   b. thought -  update 

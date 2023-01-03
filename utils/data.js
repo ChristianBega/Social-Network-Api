@@ -4,6 +4,7 @@ const userData = [
   {
     userName: "Chris",
     email: "Chris@gmail.com",
+    friends: ["Sarah", "John", "Sam", "Julian"],
   },
   {
     userName: "John",
