@@ -1,6 +1,9 @@
 // const { User, Thought } = require("../models");
 const { User, Thought } = require("../models");
 
+// .select('-__v')
+// .populate('posts')
+
 module.exports = {
   getUsers(req, res) {
     User.find()

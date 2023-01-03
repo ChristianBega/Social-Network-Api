@@ -26,7 +26,7 @@ PUT http://localhost:3001/api/users
 ###
 
 # deleteUsers by Id
-DELETE http://localhost:3001/api/users/
+DELETE http://localhost:3001/api/users/63b3ab461c613f6b236a9979
 
 ###
 
@@ -38,22 +38,24 @@ GET http://localhost:3001/api/thoughts
 ###
 
 # getSingleThought by Id
-GET http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+GET http://localhost:3001/api/thoughts/63b3c182a1c4e86477141f7d
 
 ### 
 
 # createThought
 POST http://localhost:3001/api/thoughts
+Content-Type:  application/json
+
 {
   "thoughtText": "Here's a cool thought...",
-  "username": "lernantino",
-  "userId": "5edff358a0fcb779aa7b118b"
+  "userName": "asdfasdfasdfasdfad",
+  "userId": "63b3c0e0a1c4e86477141f5e"
 }
 ###
 # updateThought by Id
-PUT http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+PUT http://localhost:3001/api/thoughts/
 
 ###
 
 # deleteThoughts by Id
-DELETE http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+DELETE http://localhost:3001/api/thoughts/63b3c182a1c4e86477141f7d
