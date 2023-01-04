@@ -4,32 +4,23 @@ const userData = [
   {
     userName: "Chris",
     email: "Chris@gmail.com",
-    thoughts: ["string of text 1", "string of text 2"],
-    friends: ["John", "Friend 2", "Friend 3"],
+    friends: ["Sarah", "John", "Sam", "Julian"],
   },
   {
     userName: "John",
     email: "John@gmail.com",
-    thoughts: ["string of text 1", "string of text 2"],
-    friends: ["Chris", "Friend 2", "Friend 3"],
   },
   {
     userName: "Sam",
     email: "Sam@gmail.com",
-    thoughts: ["string of text 1", "string of text 2"],
-    friends: ["Julian", "Chris", "John"],
   },
   {
     userName: "Julian",
     email: "Julian@gmail.com",
-    thoughts: ["string of text 1", "string of text 2"],
-    friends: ["Chris", "Sam", "Friend 3"],
   },
   {
     userName: "Sarah",
     email: "Sarah@gmail.com",
-    thoughts: ["string of text 1", "string of text 2"],
-    friends: ["John", "Sam", "Julian", "Chris"],
   },
 ];
 // thought {} - thoughtText, createdAt, userName (creator of thought)

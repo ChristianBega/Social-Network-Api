@@ -1,4 +1,6 @@
+#############
 ### USERS ###
+#############
 
 # getUsers
 GET http://localhost:3001/api/users
@@ -6,28 +8,61 @@ GET http://localhost:3001/api/users
 ###
 
 # getSingleUser by Id
-GET http://localhost:3001/api/users/
+GET http://localhost:3001/api/users/63b4e83debb7ae1bc968db77
 
 ### 
 
 # createUser
 POST http://localhost:3001/api/users
+Content-Type:  application/json
+
 {
-  "userName": "lernantino",
-  "email": "lernantino@gmail.com"
-}
+  "userName": "Chris",
+  "email": "Chris@gmail.com"
+} 
+
 ###
 # updateUser by Id
-PUT http://localhost:3001/api/users
+PUT http://localhost:3001/api/users/63b4e83debb7ae1bc968db77
+Content-Type:  application/json
+
+{
+  "userName" : "Marisa",
+  "email" : "Marisa_B@gmail.com"
+}
+
 
 ###
 
 # deleteUsers by Id
-DELETE http://localhost:3001/api/users/
+DELETE http://localhost:3001/api/users/63b4e900ebb7ae1bc968db86
 
 ###
 
+# addFriend 
+
+PUT http://localhost:3001/api/users/63b4e8dcebb7ae1bc968db81/friends/63b4e87bebb7ae1bc968db7c
+Content-Type:  application/json
+
+{
+  "userName": "Jane",
+  "email": "Jane@gmail.com"
+}
+###
+
+# removeFriend
+DELETE http://localhost:3001/api/users/63b4e8dcebb7ae1bc968db81/friends/63b4e87bebb7ae1bc968db7c
+
+{
+  "userName": "Jane",
+  "email": "Jane@gmail.com"
+}
+
+###
+
+################
 ### THOUGHTS ###
+################
 
 # getThought
 GET http://localhost:3001/api/thoughts
@@ -35,23 +70,29 @@ GET http://localhost:3001/api/thoughts
 ###
 
 # getSingleThought by Id
-GET http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+GET http://localhost:3001/api/thoughts/63b4ea3cebb7ae1bc968db99
 
 ### 
 
 # createThought
 POST http://localhost:3001/api/thoughts
+Content-Type:  application/json
 
 {
-  "thoughtText": "Here's a cool thought...",
-  "username": "lernantino",
-  "userId": "5edff358a0fcb779aa7b118b"
+  "thoughtText": "Delete me please",
+  "userName": "Christian"
 }
 ###
 # updateThought by Id
-PUT http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+PUT http://localhost:3001/api/thoughts/63b4eed69ef41b0872d0da04
+Content-Type:  application/json
+
+{
+  "thoughtText": "Delete this thought after updating it..."
+}
+
 
 ###
 
 # deleteThoughts by Id
-DELETE http://localhost:3001/api/thoughts/63b3123c2a2128051639e10c
+DELETE http://localhost:3001/api/thoughts/63b4eed69ef41b0872d0da04
