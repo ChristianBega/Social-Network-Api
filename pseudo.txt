@@ -48,36 +48,24 @@ Questions for tutor ::
 Project TODO :: 
 
 1. Thoughts and friends only showing as an empty array 
-
 1. need help setting up UPDATE controllers
   a. user -  update
   b. thought -  update 
-
 2. I need help with setting up the virtual for my userSchema
   a. virtual was built but was "unable to read .length of undefined"
-
-3. validate & match userSchema for email
-
-4.I need to create routes for this path - /api/thoughts/:thoughtId/reactions 
-  a. reactions - post and delete 
-  b. change controllers to???
-
 8. BONUS: Remove a user's associated thoughts when deleted - /api/users/:userId/friends/:friendId
   a. POST to add a new friend to a user's friend list
   b. DELETE to remove a friend from a user's friend list
 
+
+
+
+
+
+
 7. When creating a user I get a value of :  "__v" : 0
-
-
-
-
-
-
-
-
 9. Create seed data for thoughts
   a. What is this???? Where does it come from??? 
-
 5. How could I add response to response 
   a. ex. Responding to a comment on your own post. 
     User A created a post > 
@@ -85,7 +73,12 @@ Project TODO ::
     User A responds backs on User B comment. 
   b. ex. Adding reactions 
   c. Could I build another sub document??? And use virtual or 
-
 6. How could I tie a front end to this? 
   a. I need to create eventListeners to run a fetch to api
-  b. 
+
+
+
+2. Test routes to make sure they all work
+3. validate & match userSchema for email
+4.I need to controllers for this path - /api/thoughts/:thoughtId/reactions 
+  a. reactions - create and delete 
