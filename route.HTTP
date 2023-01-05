@@ -35,7 +35,7 @@ Content-Type:  application/json
 ###
 
 # deleteUsers by Id
-DELETE http://localhost:3001/api/users/63b4e900ebb7ae1bc968db86
+DELETE http://localhost:3001/api/users/63b4e8dcebb7ae1bc968db81
 
 ###
 
@@ -79,12 +79,12 @@ POST http://localhost:3001/api/thoughts
 Content-Type:  application/json
 
 {
-  "thoughtText": "Delete me please",
+  "thoughtText": "Delete me please 22222",
   "userName": "Christian"
 }
 ###
 # updateThought by Id
-PUT http://localhost:3001/api/thoughts/63b4eed69ef41b0872d0da04
+PUT http://localhost:3001/api/thoughts/63b6bf9ca67da4e8df180878
 Content-Type:  application/json
 
 {
@@ -95,4 +95,20 @@ Content-Type:  application/json
 ###
 
 # deleteThoughts by Id
-DELETE http://localhost:3001/api/thoughts/63b4eed69ef41b0872d0da04
+DELETE http://localhost:3001/api/thoughts/63b6bf9ca67da4e8df180878
+
+###
+
+
+# createReaction
+POST http://localhost:3001/api/thoughts/63b6be13112bdbad5c9aed90/reactions/
+
+{
+  "reactionBody" : "222222Reactionbody!!!!!!!!!!!",
+  "userName" : "Marisa"
+}
+
+###
+
+# deleteReaction by Id
+DELETE http://localhost:3001/api/thoughts/63b6be13112bdbad5c9aed90/reactions/63b6c45c345daaaf8998418d
