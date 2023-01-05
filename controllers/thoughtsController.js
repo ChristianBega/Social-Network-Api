@@ -4,7 +4,7 @@ module.exports = {
   getThought(req, res) {
     Thought.find()
       .select("-__v")
-      // .populate("")
+      .populate("reactions")
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
@@ -25,8 +25,6 @@ module.exports = {
       .catch((err) => {
         res.status(400).json({ message: err.message });
       });
-    // Post route notes ::
-    //To create a new thought (don't forget to push the created thought's _id to the associated user's thoughts array field)
   },
   updateThought(req, res) {
     Thought.findOneAndUpdate(
@@ -59,8 +57,31 @@ module.exports = {
       .then(() => res.json({ message: "Thought deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
-  createReaction(req, res) {},
-  deleteReaction(req, res) {},
+  createReaction(req, res) {
+    console.log(req, res);
+    Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $push: { reactions: req.body } })
+      .then((thought) => {
+        if (!thought) {
+          return res.status(400).json({ message: "No thought with this id" });
+        }
+        res.json(thought);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+  deleteReaction(req, res) {
+    Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $pull: { reactions: { _id: req.params.reactionId } } })
+      .then((thought) => {
+        if (!thought) {
+          return res.status(400).json({ message: "No thought with this id" });
+        }
+        res.status(200).json(thought);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
 };
-
-// https://github.com/Makispear/Social-Network-API/blob/main/controllers/thought-controller.js
