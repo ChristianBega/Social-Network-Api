@@ -79,6 +79,12 @@ Project TODO ::
 
 
 2. Test routes to make sure they all work
-3. validate & match userSchema for email
 4.I need to controllers for this path - /api/thoughts/:thoughtId/reactions 
   a. reactions - create and delete 
+
+
+
+
+
+3. validate & match userSchema for email
+4. submit
