@@ -17,10 +17,8 @@ module.exports = {
   },
   createUser(req, res) {
     User.create(req.body)
-      .then((user) => {
-        res.json(user);
-      })
-      .catch((err) => res.status(400).json({ message: err.message }));
+      .then((user) => res.json(user))
+      .catch((err) => res.status(500).json({ message: err.message }));
   },
   updateUser(req, res) {
     User.findOneAndUpdate(

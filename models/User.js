@@ -1,7 +1,6 @@
 //require in mongoose
 const { Schema, model } = require("mongoose");
 
-// create new userSchema with the values :
 const userSchema = new Schema(
   {
     userName: {
@@ -14,8 +13,7 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       require: true,
-      // validate : ?
-      // match : ?
+      match: /.+\@.+\..+/,
     },
     thoughts: [
       {
@@ -33,21 +31,18 @@ const userSchema = new Schema(
   {
     toJSON: {
       virtual: true,
-      // getters: true,
     },
     id: false,
   }
 );
 
-// Schema settings -
-// Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
-// .set(function (count) {
-//   this.set(count);
-// });
 
 const User = model("User", userSchema);
 module.exports = User;
+
 // Matching validation - https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
+// Match validator - https://mongoosejs.com/docs/schematypes.html
+//  a. match: RegExp, creates a validator that checks if the value matches the given regular expression
