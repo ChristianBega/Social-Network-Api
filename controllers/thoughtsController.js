@@ -18,7 +18,7 @@ module.exports = {
   createThought(req, res) {
     Thought.create(req.body)
       .then((thought) => {
-        User.findOneAndUpdate({ userName: req.body.userName }, { $push: { thoughts: thought._id } }).then((user) => {
+        User.findOneAndUpdate({ userName: req.body.userName }, { $push: { thoughts: thought._id } }).then((thought) => {
           res.json(thought);
         });
       })
@@ -77,7 +77,7 @@ module.exports = {
         if (!thought) {
           return res.status(400).json({ message: "No thought with this id" });
         }
-        res.status(200).json(thought);
+        res.json(thought);
       })
       .catch((err) => {
         console.log(err);

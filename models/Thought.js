@@ -40,7 +40,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //getter method ?? Ex. get: (date) => formatDate(date),
+      get: (date) => new Date(date).toLocaleDateString(),
     },
     userName: {
       type: String,
@@ -57,12 +57,10 @@ const thoughtSchema = new Schema(
   }
 );
 
-// Schema settings -
-// Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-
 thoughtSchema.virtual("reactionCount").get(function () {
-  return `${this.reactions.length}`;
+  return this.reactions.length;
 });
 
 const Thought = model("Thought", thoughtSchema);
 module.exports = Thought;
+// Date formatting - https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
