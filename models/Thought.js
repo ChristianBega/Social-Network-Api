@@ -19,6 +19,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: (date) => new Date(date).toLocaleDateString(),
     },
   },
   {
@@ -63,4 +64,3 @@ thoughtSchema.virtual("reactionCount").get(function () {
 
 const Thought = model("Thought", thoughtSchema);
 module.exports = Thought;
-// Date formatting - https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript

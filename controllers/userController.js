@@ -3,7 +3,7 @@ const { User, Thought } = require("../models");
 module.exports = {
   getUsers(req, res) {
     User.find()
-      .select("-__v")
+      .select("-__v") //versionKey felid - describes internal version of doc - tracks revisions of doc
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json({ message: err.message }));
   },
@@ -26,6 +26,7 @@ module.exports = {
       {
         $set: req.body,
       },
+
       {
         runValidators: true,
         new: true,
@@ -44,6 +45,7 @@ module.exports = {
   },
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
+      //                                                                                      else : delete any thoughts with this associated id
       .then((user) => (!user ? res.status(404).json({ message: "No User found with that ID" }) : Thought.deleteMany({ _id: { $in: user.thoughts } })))
       .then(() => res.json({ message: "User and Thoughts deleted" }))
       .catch((err) => res.status(500).json({ message: err.message }));

@@ -1,10 +1,9 @@
-// Create variables to store data as objects
-// userInfo {} - userName, email, thoughts, friends, virtual : friendCount
+// Should I create a separate variable to store an object of reactions???? inside of nest within the thoughts?
+
 const userData = [
   {
     userName: "Chris",
     email: "Chris@gmail.com",
-    friends: ["Sarah", "John", "Sam", "Julian"],
   },
   {
     userName: "John",
@@ -23,8 +22,7 @@ const userData = [
     email: "Sarah@gmail.com",
   },
 ];
-// thought {} - thoughtText, createdAt, userName (creator of thought)
-// thought > Reaction {} - reactionId, reactionBody, userName, createdAt
+
 const thoughtData = [
   {
     thoughtText: "Just a random thought about nothing.",
@@ -94,8 +92,5 @@ const thoughtData = [
     ],
   },
 ];
-
-// export out data
-// userData, thoughtData, ReactionData
 
 module.exports = { userData, thoughtData };
