@@ -43,6 +43,10 @@ userSchema.virtual("friendCount").get(function () {
 const User = model("User", userSchema);
 module.exports = User;
 
+
+// Helpful resources :: 
 // Matching validation - https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
 // Match validator - https://mongoosejs.com/docs/schematypes.html
 //  a. match: RegExp, creates a validator that checks if the value matches the given regular expression
+// Date formatting - https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
+
