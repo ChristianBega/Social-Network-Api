@@ -58,7 +58,6 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   createReaction(req, res) {
-    console.log(req, res);
     Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $push: { reactions: req.body } })
       .then((thought) => {
         if (!thought) {
